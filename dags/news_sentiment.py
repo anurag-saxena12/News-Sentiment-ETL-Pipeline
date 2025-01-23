@@ -124,6 +124,7 @@ def insert_articles(**kwargs):
     finally:
         conn.close()
 
+#Preprocess text (clean and standardize) for accurate sentiment analysis
 def preprocess_text(text):
     text = text.lower()
     text = ''.join(char for char in text if char.isalnum() or char.isspace())
