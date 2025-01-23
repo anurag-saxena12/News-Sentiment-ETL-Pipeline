@@ -6,4 +6,4 @@ The **News Sentiment ETL Pipeline** is a data engineering project designed to au
 
 ## Architecture Diagram
 
-![Project Architecture](assets/architecture_diagram.png)
+![Project Architecture](assets/nyt_sentiment_architecture_diagram.png)
