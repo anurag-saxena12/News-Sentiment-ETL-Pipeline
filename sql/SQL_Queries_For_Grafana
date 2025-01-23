@@ -1,0 +1,33 @@
+--Average Daily Sentiment Score:
+SELECT 
+    published_at::DATE AS date, 
+    AVG(sentiment_score) AS avg_sentiment
+FROM news_sentiment
+GROUP BY published_at::DATE
+ORDER BY date;
+
+--Average Score by Section:
+SELECT 
+    section, 
+    AVG(sentiment_score) AS avg_sentiment
+FROM news_sentiment
+GROUP BY section
+ORDER BY avg_sentiment DESC;
+
+--Top 5 Articles with Highest Sentiment Score:
+SELECT title, sentiment_score
+FROM news_sentiment 
+ORDER BY sentiment_score DESC
+LIMIT 5; 
+
+--Top 5 articles with Lowest Sentiment Score:
+SELECT title AS Title, sentiment_score AS Sentiment_Score
+FROM news_sentiment 
+ORDER BY sentiment_score ASC
+LIMIT 5
+
+--Average Sentiment Score:
+SELECT
+  AVG(sentiment_score)
+FROM
+  news_sentiment
