@@ -124,6 +124,12 @@ def insert_articles(**kwargs):
     finally:
         conn.close()
 
+def preprocess_text(text):
+    text = text.lower()
+    text = ''.join(char for char in text if char.isalnum() or char.isspace())
+    text = ' '.join(text.split())
+    return text
+
 # Analyze sentiment and insert sentiment data
 def analyze_and_insert_sentiment():
     conn = connect_db()
@@ -148,7 +154,7 @@ def analyze_and_insert_sentiment():
                 'section': row[5],
                 'subsection': row[6],
                 'geo_facet': row[7],
-                'sentiment_score': TextBlob(row[1]).sentiment.polarity,
+                'sentiment_score': TextBlob(preprocess_text(row[1])).sentiment.polarity,
                 'sentiment_label': (
                     'positive' if TextBlob(row[1]).sentiment.polarity > 0 else
                     'negative' if TextBlob(row[1]).sentiment.polarity < 0 else 'neutral'
