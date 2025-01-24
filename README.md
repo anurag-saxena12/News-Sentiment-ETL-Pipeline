@@ -8,24 +8,6 @@ The **News Sentiment ETL Pipeline** is a data engineering project designed to au
 
 ![Project Architecture](assets/nyt_sentiment_architecture_diagram.png)
 
-## Project Structure
-
-News-Sentiment-ETL-Pipeline/
-├── dags/                # Airflow DAGs for ETL workflows
-│   ├── sentiment_dag.py  # DAG for sentiment analysis
-│   └── utils.py          # Utility functions for DAGs
-├── sql/                 # SQL queries for visualization
-│   ├── avg_sentiment_by_date.sql
-│   ├── top_sources_by_sentiment.sql
-│   └── daily_article_count.sql
-├── plugins/             # Custom Airflow plugins
-├── logs/                # Airflow logs (excluded in .gitignore)
-├── Dockerfile           # Dockerfile for building project images
-├── docker-compose.yaml  # Docker Compose for orchestrating containers
-├── requirements.txt     # Python dependencies
-├── README.md            # Project documentation
-├── .env.example         # Example environment variables
-
 ## Prerequisites
 
 Ensure the following are installed on your local machine before proceeding:
@@ -56,4 +38,40 @@ Ensure the following are installed on your local machine before proceeding:
     ```bash
     docker-compose up -d
 
+## Usage
 
+1. **Access Airflow:**
+   - Open your browser and go to [http://localhost:8080](http://localhost:8080).
+   - Login using default credentials (`airflow` / `airflow`).
+   - Trigger the DAG to start the sentiment analysis workflow.
+
+2. **Access Grafana for Visualization:**
+   - Open [http://localhost:3000](http://localhost:3000).
+   - Login using default credentials (`admin` / `admin`).
+
+3. **Inspect the PostgreSQL Database:**
+   - Connect using the following command:
+     ```bash
+     psql -U your_username -d news_db -h localhost
+     ```
+   - Run queries from the `sql/` directory to analyze sentiment trends.
+
+## Project Structure
+
+````markdown
+News-Sentiment-ETL-Pipeline/
+├── dags/                # Airflow DAGs for ETL workflows
+│   ├── sentiment_dag.py  # DAG for sentiment analysis
+├── sql/                 # SQL queries for visualization
+│   ├── avg_sentiment_by_date.sql
+│   ├── top_sources_by_sentiment.sql
+│   └── daily_article_count.sql
+├── plugins/             # Custom Airflow plugins
+│   ├── __init__.py
+│   └── custom_plugin.py
+├── logs/                # Airflow logs (excluded in .gitignore)
+├── Dockerfile           # Dockerfile for building project images
+├── docker-compose.yaml  # Docker Compose for orchestrating containers
+├── requirements.txt     # Python dependencies
+├── README.md            # Project documentation
+├── .env.example         # Example environment variables
