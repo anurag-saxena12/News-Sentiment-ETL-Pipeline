@@ -29,3 +29,13 @@ Ensure the following are installed on your local machine before proceeding:
    ```bash
    git clone https://github.com/yourusername/News-Sentiment-ETL-Pipeline.git
    cd News-Sentiment-ETL-Pipeline
+
+2. **Copy .env.example to .env and update with your credentials:**
+    ```bash
+    cp .env.example .env
+
+3. **Start the Docker containers:**
+    ```bash
+    docker-compose up -d
+
+
