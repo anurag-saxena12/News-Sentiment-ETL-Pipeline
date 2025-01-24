@@ -56,6 +56,10 @@ Ensure the following are installed on your local machine before proceeding:
      ```
    - Run queries from the `sql/` directory to analyze sentiment trends.
 
+4. **Shut Down Docker containers:**
+    ```bash
+    docker-compose down
+
 ## Project Structure
 
 ````markdown
@@ -75,3 +79,26 @@ News-Sentiment-ETL-Pipeline/
 ├── requirements.txt     # Python dependencies
 ├── README.md            # Project documentation
 ├── .env.example         # Example environment variables
+
+
+## Troubleshooting
+
+**1. Airflow UI not accessible at `http://localhost:8080`:**
+   - Ensure Docker containers are running using:
+     ```bash
+     docker ps
+     ```
+   - Restart the Airflow containers:
+     ```bash
+     docker-compose restart
+     ```
+
+**2. PostgreSQL connection issues:**
+   - Check if PostgreSQL is running on your system using:
+     ```bash
+     psql -U your_username -d news_db -h localhost
+     ```
+   - Verify `.env` credentials are correct.
+
+**3. No data showing in Grafana:**
+   - Ensure Airflow DAGs have successfully processed data.
