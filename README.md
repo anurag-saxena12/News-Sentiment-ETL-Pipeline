@@ -22,3 +22,10 @@ Ensure the following are installed on your local machine before proceeding:
    
 3. **Python 3.8+** (optional, for local development)
    - Install from [Python official site](https://www.python.org/downloads/)
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/News-Sentiment-ETL-Pipeline.git
+   cd News-Sentiment-ETL-Pipeline
