@@ -79,8 +79,8 @@ News-Sentiment-ETL-Pipeline/
 ├── requirements.txt     # Python dependencies
 ├── README.md            # Project documentation
 ├── .env.example         # Example environment variables
-````markdown
 
+````
 
 ## Troubleshooting
 
