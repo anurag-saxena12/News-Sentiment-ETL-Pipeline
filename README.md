@@ -7,3 +7,18 @@ The **News Sentiment ETL Pipeline** is a data engineering project designed to au
 ## Architecture Diagram
 
 ![Project Architecture](assets/nyt_sentiment_architecture_diagram.png)
+
+## Prerequisites
+
+Ensure the following are installed on your local machine before proceeding:
+
+1. **PostgreSQL** (version 12 or higher)
+   - Download from [PostgreSQL official site](https://www.postgresql.org/download/)
+   - Ensure the PostgreSQL service is running and accessible.
+   
+2. **Docker & Docker Compose**
+   - Install Docker: [Get Docker](https://docs.docker.com/get-docker/)
+   - Install Docker Compose: [Get Docker Compose](https://docs.docker.com/compose/install/)
+   
+3. **Python 3.8+** (optional, for local development)
+   - Install from [Python official site](https://www.python.org/downloads/)
